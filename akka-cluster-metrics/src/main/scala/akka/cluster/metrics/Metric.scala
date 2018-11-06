@@ -298,7 +298,7 @@ final case class NodeMetrics(address: Address, timestamp: Long, metrics: Set[Met
     val updated = for {
       latest ← latestNode.metrics
       current ← currentNode.metrics
-      if (latest sameAs current)
+      if latest sameAs current
     } yield {
       current :+ latest
     }
